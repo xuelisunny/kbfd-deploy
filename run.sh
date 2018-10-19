@@ -29,9 +29,18 @@ done
 
 Sequential： 
 
-java -Djava.security.policy=security.policy -Xmx12G -jar ./sequential.jar config-sample.properties
+java -Djava.security.policy=security.policy -Xmx120G -jar ./sequential.jar config-sample.properties
 
 
 
-yli34
-Lee692817   
+parallel
+java -Djava.security.policy=security.policy -Xmx2G -jar ./Mcoordinator.jar config-sample.properties 2 1 1
+java -Djava.security.policy=security.policy -Xmx2G -jar ./Mworker.jar localhost config-sample.properties 2 1 1
+java -Djava.security.policy=security.policy -Xmx2G -jar client.jar localhost config-sample.properties 2 1 1
+
+       
+
+yli34@staff.ssh.inf.ed.ac.uk
+Lee692817  
+
+/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD
