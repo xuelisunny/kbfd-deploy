@@ -1,12 +1,15 @@
-
 127.0.0.1 localhost
 
 # The following lines are desirable for IPv6 capable hosts
 ::1 ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
+fe00::0	ip6-localnet
 ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 
-172.31.17.62 aws01
+172.31.7.18	aws01
+172.31.10.136 aws02	 
+172.31.11.172 aws03
+172.31.7.253 aws04
+172.31.2.12	 aws05

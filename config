@@ -2,46 +2,14 @@ Host *
     ServerAliveInterval 300s
 Host aws*
     User ubuntu
-    IdentityFile ~/.ssh/aws-ireland.pem
+    IdentityFile ~/.ssh/aws_bj.pem
 Host aws01
-    Hostname 54.154.87.193
+    Hostname 52.81.54.19
 Host aws02
-    Hostname 54.194.16.202
+    Hostname 52.80.148.189
 Host aws03
-    Hostname 54.194.25.77
+    Hostname 52.81.107.109
 Host aws04
-    Hostname 54.171.113.116
+    Hostname 52.80.160.160
 Host aws05
-    Hostname 54.194.56.186
-Host aws06
-    Hostname 54.154.79.99
-Host aws07
-    Hostname 54.194.110.165
-Host aws08
-    Hostname 54.154.249.73
-Host aws09
-    Hostname 54.194.132.152
-Host aws10
-    Hostname 54.154.210.113
-Host aws11
-    Hostname 54.171.170.121
-Host aws12
-    Hostname 54.194.162.230
-Host aws13
-    Hostname 54.229.28.126
-Host aws14
-    Hostname 54.171.131.166
-Host aws15
-    Hostname 54.229.100.36
-Host aws16
-    Hostname 54.171.182.81
-Host aws17
-    Hostname 54.171.128.39
-Host aws18
-    Hostname 54.171.219.179
-Host aws19
-    Hostname 54.171.200.49
-Host aws20
-    Hostname 54.229.49.168
-Host aws21
-    Hostname 54.194.209.83  
+    Hostname 52.80.73.59
