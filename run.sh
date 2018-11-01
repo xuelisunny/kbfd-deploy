@@ -43,4 +43,4 @@ java -Djava.security.policy=security.policy -Xmx2G -jar client.jar localhost con
 yli34@staff.ssh.inf.ed.ac.uk
 Lee692817  
 
-/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD
+scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4 ~/data/

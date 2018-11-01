@@ -4,12 +4,10 @@ Host aws*
     User ubuntu
     IdentityFile ~/.ssh/aws_bj.pem
 Host aws01
-    Hostname 52.81.54.19
+    Hostname 54.223.92.162
 Host aws02
-    Hostname 52.80.148.189
+    Hostname 52.81.32.26
 Host aws03
-    Hostname 52.81.107.109
+    Hostname 52.80.194.52
 Host aws04
-    Hostname 52.80.160.160
-Host aws05
-    Hostname 52.80.73.59
+    Hostname 52.81.108.49
