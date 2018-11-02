@@ -2,7 +2,6 @@
 set dataset [lindex $argv 0]
 set password Lee692817
 set sourcepath /afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/${dataset}
-echo $sourcepath
 spawn scp -r yli34@staff.ssh.inf.ed.ac.uk:$sourcepath /home/ubuntu/data/
 expect {
 	 	     "(yes/no)?"
@@ -16,6 +15,5 @@ expect {
 	        }
        }
  expect "100%"
- expect eof
 
       
