@@ -6,9 +6,9 @@ ssh aws01 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
-	chmod +x coordinator.sh
-	nohup coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
-	sleep 3s
+	cp coordinator.sh /home/ubuntu/run/coordinator.sh
+	chmod +x /home/ubuntu/run/coordinator.sh
+	nohup /home/ubuntu/run/coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	exit
 EOF
 for ((i=2;i<5;i++)); do
@@ -16,16 +16,17 @@ for ((i=2;i<5;i++)); do
 	 pkill -9 java
 	 cd kbfd-deploy
 	 git pull
-	 chmod +x worker.sh
-	 nohup worker.sh > /home/ubuntu/worker.txt 2>&1 & 
+	 cp worker.sh /home/ubuntu/run/worker.sh
+	 chmod +x /home/ubuntu/run/worker.sh
+	 nohup /home/ubuntu/run/worker.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
 EOF
 done
 ssh aws01 <<EOF
 	cd kbfd-deploy
 	git pull
-	chmod +x client.sh
-	nohup client.sh > /home/ubuntu/client.txt 2>&1 & 
+	cp client.sh /home/ubuntu/run/client.sh 
+	chmod +x /home/ubuntu/run/client.sh
+	nohup /home/ubuntu/run/client.sh > /home/ubuntu/client.txt 2>&1 & 
 	exit
 EOF
-exit 0
