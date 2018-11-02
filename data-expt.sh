@@ -2,7 +2,7 @@
 set timeout -1
 set dataset [lindex $argv 0]
 set password Lee692817
-set sourcepath /afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/\${dataset}
+set sourcepath /afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4
 spawn scp -r yli34@staff.ssh.inf.ed.ac.uk:$sourcepath /home/ubuntu/data/
 expect {
 	 	     "(yes/no)?"
