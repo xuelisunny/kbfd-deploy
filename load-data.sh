@@ -1,10 +1,14 @@
 #!/bin/bash
-for ((i=01;i<05;i++)); do
-	ssh aws$i <<EOF
+$dataset
+git add --all
+git commit -m "a"
+git push
+for ((i=1;i<6;i++)); do
+	ssh aws0$i <<EOF
 		cd kbfd-deploy
 		git pull
-		cp data-exp.sh /home/ubuntu/run/data-exp.sh
-		nohup /home/ubuntu/run/data-exp.sh > ~/load-data.txt 2>&1 &
+		cp data-expt.sh /home/ubuntu/run/data-expt.sh $dataset
+		nohup /home/ubuntu/run/data-expt.sh > ~/load-data.txt 2>&1 &
 		exit
 EOF
 done

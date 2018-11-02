@@ -1,7 +1,7 @@
 #!/usr/bin/expect
-set timeout 200000
+set dataset [lindex $argv 0]
 set password Lee692817
-spawn scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/yago4 /home/ubuntu/data/
+spawn scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/$dataset /home/ubuntu/data/
 expect {
 	 	     "(yes/no)?"
 	         {
