@@ -1,4 +1,5 @@
 #!/bin/bash
+dataset=`echo $1`
 git add --all
 git commit -m "a"
 git push
@@ -7,7 +8,8 @@ for ((i=1;i<6;i++)); do
 		cd kbfd-deploy
 		git pull
 		cp data-expt.sh /home/ubuntu/run/data-expt.sh
-		nohup /home/ubuntu/run/data-expt.sh ${dataset} > ~/load-data.txt 2>&1 &
+		nohup /home/ubuntu/run/data-expt.sh $dataset > ~/load-data.txt 2>&1 &
 		exit
 EOF
-done
+	done
+
