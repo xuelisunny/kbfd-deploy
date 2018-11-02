@@ -11,3 +11,5 @@ Host aws03
     Hostname 52.80.194.52
 Host aws04
     Hostname 52.81.108.49
+Host aws05
+    Hostname 52.81.54.46

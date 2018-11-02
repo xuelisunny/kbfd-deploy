@@ -1,1 +1,2 @@
-java -Djava.security.policy=security.policy -Xmx12G -jar ./dis-client.jar aws01
+#!/bin/bash
+java -Djava.security.policy=security.policy -Xmx20G -jar ./client.jar localhost
