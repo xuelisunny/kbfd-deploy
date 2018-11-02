@@ -15,6 +15,8 @@ cp hosts /etc/hosts
 # change hostname
 sudo hostname awsNN
 
+sudo cp kbfd-deploy/hosts /etc/hosts && cp kbfd-deploy/hosts ~/.ssh/ && cp kbfd-deploy/config ~/.ssh/
+
 #config ssh
 # local
 ./local-upload.sh aws.pem "~/.ssh/aws.pem"
@@ -55,7 +57,7 @@ command2='cd kbfd-deploy && git pull && java -Djava.security.policy=security.pol
 command3='cd kbfd-deploy && git pull && java -Djava.security.policy=security.policy -Xmx20G -jar ./client.jar aws01'  
 ssh aws01 $command1
 sleep 3s
-for ((i=2;i<6;i++)); do
+for ((i=2;i<5;i++)); do
 	 ssh aws0$i $command2
 	 sleep 3s
 done
