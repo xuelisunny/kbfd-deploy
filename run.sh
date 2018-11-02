@@ -8,6 +8,15 @@ git clone https://github.com/xuelisunny/kbfd-deploy
 
 chmod 400 aws_bj.pem aws_nx.pem
 
+ ps -ef |grep yago4 | grep -v grep | awk  '{print $2}'|xargs kill -9 
+
+
+
+pid=$(ssh root@$remote_host "ps -ef | grep data-expt | grep -v grep | awk  '{print $2}'"| awk '{print $2}')
+
+ssh root@$remote_host "kill -9 ${pid}"
+
+
 #config hostname
 # step: edit hosts in repo
 # update repo
