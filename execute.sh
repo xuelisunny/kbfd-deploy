@@ -5,7 +5,8 @@ command3='cd kbfd-deploy && java -Djava.security.policy=security.policy -Xmx20G 
 ssh aws01 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
-	echo "coordinator"
+	git pull
+	chmod +x coordinator.sh
 	nohup coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	sleep 3s
 	exit
@@ -14,13 +15,16 @@ for ((i=2;i<5;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
 	 cd kbfd-deploy
-	 echo "worker"
+	 git pull
+	 chmod +x worker.sh
 	 nohup worker.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
 EOF
 done
 ssh aws01 <<EOF
 	cd kbfd-deploy
+	git pull
+	chmod +x client.sh
 	nohup client.sh > /home/ubuntu/client.txt 2>&1 & 
 	exit
 EOF
