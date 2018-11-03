@@ -1,6 +1,6 @@
 #!/bin/bash
 value2=$1
-value1=/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4
+value1=/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/
 path=${value1}${value2}
 echo $path
 git add --all
