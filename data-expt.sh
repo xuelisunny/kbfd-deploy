@@ -2,7 +2,7 @@
 set timeout -1
 set dataset [lindex $argv 0]
 set password Lee692817
-spawn rsync -r yli34@staff.ssh.inf.ed.ac.uk:$dataset /home/ubuntu/data/
+spawn rsync -avz dataset /home/ubuntu/data/
 expect {
 	 	     "(yes/no)?"
 	         {
