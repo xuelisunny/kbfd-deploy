@@ -11,7 +11,7 @@ for ((i=1;i<6;i++)); do
 		cd kbfd-deploy
 		git pull
 		cp data-expt.sh /home/ubuntu/run/data-expt.sh
-		nohup /home/ubuntu/run/data-expt.sh path > ~/load-data.txt 2>&1 &
+		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
 EOF
 	done
