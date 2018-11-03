@@ -1,7 +1,7 @@
 #!/bin/bash
-$value2=$1
-$value1=/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4
-$path=${value1}${value2}
+value2=$1
+value1=/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4
+path=${value1}${value2}
 echo $path
 git add --all
 git commit -m "a"
