@@ -16,6 +16,7 @@ pid=$(ssh root@$remote_host "ps -ef | grep data-expt | grep -v grep | awk  '{pri
 
 ssh root@$remote_host "kill -9 ${pid}"
 
+ rm -rf `ls  |egrep -v 'dbpedia4|yago4'`
 
 #config hostname
 # step: edit hosts in repo
