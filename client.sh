@@ -1,2 +1,2 @@
 #!/bin/bash
-java -Djava.security.policy=security.policy -Xmx20G -jar ./client.jar localhost
+java -Djava.security.policy=security.policy -jar ./client.jar localhost
