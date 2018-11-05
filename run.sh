@@ -18,6 +18,8 @@ ssh root@$remote_host "kill -9 ${pid}"
 
  rm -rf `ls  |egrep -v 'dbpedia4|yago4'`
 
+ git add --all && git commit -m "a" && git push
+
 #config hostname
 # step: edit hosts in repo
 # update repo
