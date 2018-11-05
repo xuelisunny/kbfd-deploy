@@ -13,3 +13,13 @@ Host aws04
     Hostname 52.81.108.49
 Host aws05
     Hostname 52.81.54.46
+Host aws06
+    Hostname 52.81.66.91
+Host aws07
+	Hostname 52.81.65.12
+Host aws08
+	Hostname 52.81.34.183
+Host aws09
+	Hostname 52.80.58.225
+Host aws10
+	Hostname 52.81.19.155
