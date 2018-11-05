@@ -6,11 +6,11 @@ echo $path
 git add --all
 git commit -m "a"
 git push
-for ((i=7;i<9;i++)); do
+for ((i=6;i<9;i++)); do
 	ssh aws0$i <<EOF
 		cd kbfd-deploy
 		git pull
-		cp data-expt.sh /home/ubuntu/run/data-expt.sh
+		cp data-expt.sh /home/ubuntu/run/
 		chmod +x /home/ubuntu/run/data-expt.sh
 		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
@@ -19,7 +19,7 @@ done
 ssh aws10 <<EOF
 		cd kbfd-deploy
 		git pull
-		cp data-expt.sh /home/ubuntu/run/data-expt.sh
+		cp data-expt.sh /home/ubuntu/run/
 		chmod +x /home/ubuntu/run/data-expt.sh
 		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
