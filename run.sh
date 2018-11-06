@@ -9,7 +9,16 @@ open instance:
 
 3. cd kbfd-deploy && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh && chmod 400 ~/.ssh/aws_bj.pem && sudo cp hosts /etc/hosts 
 
-4. 
+4. cd .. && mkdir run && mkdir data 
+
+
+transfer data 
+
+./load-data.sh dbpedia4
+
+
+
+
 
 
 
