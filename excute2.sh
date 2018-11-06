@@ -11,7 +11,7 @@ ssh aws10 <<EOF
 	git pull
 	cp coordinator.sh /home/ubuntu/run/coordinator2.sh
 	chmod +x /home/ubuntu/run/coordinator2.sh
-	nohup /home/ubuntu/run/coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
+	nohup /home/ubuntu/run/coordinator2.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	exit
 EOF
 for ((i=6;i<9;i++)); do
