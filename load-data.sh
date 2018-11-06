@@ -6,8 +6,10 @@ echo $path
 git add --all
 git commit -m "a"
 git push
-for ((i=1;i<=5;i++)); do
+for ((i=6;i<=9;i++)); do
 	ssh aws0$i <<EOF
+	    mkdir data
+	    mkdir run
 		cd kbfd-deploy
 		git pull
 		cp data-expt.sh /home/ubuntu/run/data-expt.sh 
@@ -16,5 +18,4 @@ for ((i=1;i<=5;i++)); do
 		exit
 EOF
 done
-
 

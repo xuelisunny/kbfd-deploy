@@ -1,10 +1,22 @@
  
 执行流程：
 
+open instance:
+
+1. sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update &&  sudo apt-get install oracle-java8-installer && sudo apt-get install git && sudo apt-get install expect
+
+2. git clone https://github.com/xuelisunny/kbfd-deploy
+
+3. cd kbfd-deploy && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh && chmod 400 ~/.ssh/aws_bj.pem && sudo cp hosts /etc/hosts 
+
+4. 
+
+
+
+
 sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
 
-git clone https://github.com/xuelisunny/kbfd-deploy
 
 chmod 400 aws_bj.pem aws_nx.pem
 
@@ -39,11 +51,7 @@ chmod 400 ~/.ssh/aws.pem
 cd kbfd-deploy && cp hosts /etc/hosts && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh/ && chmod 400 ~/.ssh/aws_bj.pem  
 
 
-#!/bin/bash
-command='sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update &&  sudo apt-get install oracle-java8-installer && sudo apt-get install git'
-for ((i=1;i<5;i++)); do
-	 ssh aws$i $command
-done
+
 
 
 scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4 ~/data/ 
