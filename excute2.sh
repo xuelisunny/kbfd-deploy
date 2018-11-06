@@ -9,17 +9,17 @@ ssh aws10 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
-	cp coordinator.sh /home/ubuntu/run/coordinator2.sh
+	cp coordinator2.sh /home/ubuntu/run/coordinator2.sh
 	chmod +x /home/ubuntu/run/coordinator2.sh
 	nohup /home/ubuntu/run/coordinator2.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	exit
 EOF
-for ((i=6;i<9;i++)); do
+for ((i=6;i<=9;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
 	 cd kbfd-deploy
 	 git pull
-	 cp worker.sh /home/ubuntu/run/worker2.sh
+	 cp worker2.sh /home/ubuntu/run/worker2.sh
 	 chmod +x /home/ubuntu/run/worker2.sh
 	 nohup /home/ubuntu/run/worker2.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
