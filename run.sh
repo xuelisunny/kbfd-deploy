@@ -18,7 +18,7 @@ ssh root@$remote_host "kill -9 ${pid}"
 
  rm -rf `ls  |egrep -v 'dbpedia4|yago4'`
 
- git add --all && git commit -m "a" && git push
+ cp ./target/*.jar ./kbfd-deploy/ && cd kbfd-deploy && git add --all && git commit -m "a" && git push && ./execute.sh
 
 #config hostname
 # step: edit hosts in repo

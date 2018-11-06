@@ -12,7 +12,7 @@ ssh aws01 <<EOF
 	cp coordinator.sh /home/ubuntu/run/coordinator.sh
 	chmod +x /home/ubuntu/run/coordinator.sh
 	nohup /home/ubuntu/run/coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
-	exit
+	exits
 EOF
 for ((i=2;i<6;i++)); do
 	 ssh aws0$i <<EOF
