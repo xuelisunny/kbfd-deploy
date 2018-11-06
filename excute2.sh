@@ -20,7 +20,7 @@ for ((i=6;i<9;i++)); do
 	 cd kbfd-deploy
 	 git pull
 	 cp worker.sh /home/ubuntu/run/worker2.sh
-	 chmod +x /home/ubuntu/run/worker.sh
+	 chmod +x /home/ubuntu/run/worker2.sh
 	 nohup /home/ubuntu/run/worker2.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
 EOF
