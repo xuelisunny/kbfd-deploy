@@ -5,8 +5,8 @@ command3='cd kbfd-deploy && java -Djava.security.policy=security.policy -jar ./c
 git add --all
 git commit -m "a"
 git push
-ssh aws01 command1
+ssh aws01 $command1
 for ((i=2;i<6;i++)); do
-	ssh aws0$i command2
+	ssh aws0$i $command2
 done
-ssh aws01 command3
+ssh aws01 $command3
