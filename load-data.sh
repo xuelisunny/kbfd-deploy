@@ -6,7 +6,7 @@ echo $path
 git add --all
 git commit -m "a"
 git push
-for ((i=6;i<=9;i++)); do
+for ((i=1;i<=9;i++)); do
 	ssh aws0$i <<EOF
 		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
