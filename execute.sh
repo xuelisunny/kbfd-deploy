@@ -5,7 +5,7 @@ command3='cd kbfd-deploy && java -Djava.security.policy=security.policy -jar ./c
 git add --all
 git commit -m "a"
 git push
-ssh aws01 <<EOF
+ssh aws21 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
@@ -14,7 +14,7 @@ ssh aws01 <<EOF
 	nohup /home/ubuntu/run/coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	exits
 EOF
-for ((i=2;i<6;i++)); do
+for ((i=1;i<9;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
 	 cd kbfd-deploy
@@ -24,8 +24,18 @@ for ((i=2;i<6;i++)); do
 	 nohup /home/ubuntu/run/worker.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
 EOF
+for ((i=10;i<20;i++)); do
+	 ssh aws$i <<EOF
+	 pkill -9 java
+	 cd kbfd-deploy
+	 git pull
+	 cp worker.sh /home/ubuntu/run/worker.sh
+	 chmod +x /home/ubuntu/run/worker.sh
+	 nohup /home/ubuntu/run/worker.sh > /home/ubuntu/worker.txt 2>&1 & 
+	 exit
+EOF
 done
-ssh aws01 <<EOF
+ssh aws21 <<EOF
 	cd kbfd-deploy
 	git pull
 	cp client.sh /home/ubuntu/run/client.sh 
