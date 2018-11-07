@@ -7,6 +7,10 @@ git commit -m "a"
 git push
 ssh aws21 <<EOF
 	pkill -9 java
+	rm -rf ~/data/dbpedia8
+	rm -rf ~/data/dbpedia12
+	rm -rf ~/data/yago12
+	rm -rf ~/data/imdb12
 	cd kbfd-deploy
 	rm *.log
 	git pull
@@ -18,6 +22,11 @@ EOF
 for ((i=1;i<=9;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
+	 pkill -9 java
+	 rm -rf ~/data/dbpedia8
+	 rm -rf ~/data/dbpedia12
+	 rm -rf ~/data/yago12
+	 rm -rf ~/data/imdb12
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
@@ -30,6 +39,11 @@ done
 for ((i=10;i<=20;i++)); do
 	 ssh aws$i <<EOF
 	 pkill -9 java
+	 pkill -9 java
+	 rm -rf ~/data/dbpedia8
+	 rm -rf ~/data/dbpedia12
+	 rm -rf ~/data/yago12
+	 rm -rf ~/data/imdb12
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
