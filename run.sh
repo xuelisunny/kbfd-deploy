@@ -7,7 +7,7 @@ open instance:
 
 2. git clone https://github.com/xuelisunny/kbfd-deploy
 
-3. cd kbfd-deploy && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh && chmod 400 ~/.ssh/aws_bj.pem && sudo cp hosts /etc/hosts 
+3. mkdir run && mkdir data && cd kbfd-deploy && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh && chmod 400 ~/.ssh/aws_bj.pem && sudo cp hosts /etc/hosts 
 
 4. cd .. && mkdir run && mkdir data 
 
@@ -23,8 +23,7 @@ transfer data
 
 
 
-sudo rm /var/cache/apt/archives/lock
-sudo rm /var/lib/dpkg/lock
+sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock
 
 
 chmod 400 aws_bj.pem aws_nx.pem
@@ -93,7 +92,36 @@ done
 ssh aws01 $command3
 
 
+load-data
 
+#!/bin/bash
+value2=$1
+value1=yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/
+path=${value1}${value2}
+echo $path
+git add --all
+git commit -m "a"
+git push
+for ((i=6;i<=9;i++)); do
+	ssh aws0$i <<EOF
+		cd kbfd-deploy
+		git pull
+		cp data-expt.sh /home/ubuntu/run/data-expt.sh 
+		chmod +x /home/ubuntu/run/data-expt.sh
+		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
+		exit
+EOF
+done
+for ((i=10;i<=21;i++)); do
+	ssh aws$i <<EOF
+		cd kbfd-deploy
+		git pull
+		cp data-expt.sh /home/ubuntu/run/data-expt.sh 
+		chmod +x /home/ubuntu/run/data-expt.sh
+		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
+		exit
+EOF
+done
 
 
 
