@@ -14,15 +14,12 @@ ssh aws21 <<EOF
 	nohup /home/ubuntu/run/coordinator.sh > /home/ubuntu/coordinator.txt 2>&1 &
 	exits
 EOF
-for ((i=1;i<6;i++)); do
-	 ssh aws0$i <<EOF
-	 sudo cp kbfd-deploy/hosts /etc/hosts 
-	 cp kbfd-deploy/config ~/.ssh/
-EOF
-done
 for ((i=1;i<=9;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
+	 sudo cp kbfd-deploy/hosts /etc/hosts 
+	 cp kbfd-deploy/hosts ~/.ssh/ 
+	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
 	 git pull
 	 cp worker.sh /home/ubuntu/run/worker.sh
@@ -34,6 +31,9 @@ done
 for ((i=10;i<20;i++)); do
 	 ssh aws$i <<EOF
 	 pkill -9 java
+	 sudo cp kbfd-deploy/hosts /etc/hosts 
+	 cp kbfd-deploy/hosts ~/.ssh/ 
+	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
 	 git pull
 	 cp worker.sh /home/ubuntu/run/worker.sh
