@@ -16,4 +16,14 @@ for ((i=6;i<=9;i++)); do
 		exit
 EOF
 done
+for ((i=10;i<=21;i++)); do
+	ssh aws$i <<EOF
+		cd kbfd-deploy
+		git pull
+		cp data-expt.sh /home/ubuntu/run/data-expt.sh 
+		chmod +x /home/ubuntu/run/data-expt.sh
+		nohup /home/ubuntu/run/data-expt.sh $path > ~/load-data.txt 2>&1 &
+		exit
+EOF
+done
 

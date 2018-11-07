@@ -14,12 +14,34 @@ Host aws04
 Host aws05
     Hostname 52.81.54.46
 Host aws06
-    Hostname 52.81.95.59
+    Hostname 54.222.230.125
 Host aws07
-	Hostname 52.81.41.98
+	Hostname 52.81.86.137
 Host aws08
-	Hostname 52.81.35.206
+	Hostname 54.222.188.95
 Host aws09
-	Hostname 52.81.39.115
+	Hostname 52.80.160.112
 Host aws10
-	Hostname 52.80.208.175
+	Hostname 52.81.95.230
+Host aws11
+    Hostname 52.81.90.18
+Host aws12
+    Hostname 52.81.58.106
+Host aws13
+    Hostname 52.81.21.68
+Host aws14
+    Hostname 52.81.98.121
+Host aws15
+    Hostname 52.81.19.140
+Host aws16
+    Hostname 52.81.30.233
+Host aws17
+    Hostname 52.81.90.130
+Host aws18
+    Hostname 52.80.214.3
+Host aws19
+    Hostname 52.80.30.227
+Host aws20
+    Hostname 52.81.39.41
+Host aws21
+    Hostname 52.81.21.130
