@@ -8,6 +8,7 @@ git push
 ssh aws21 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
+	rm *.log
 	git pull
 	cp coordinator.sh /home/ubuntu/run/coordinator.sh
 	chmod +x /home/ubuntu/run/coordinator.sh
@@ -21,6 +22,7 @@ for ((i=1;i<=9;i++)); do
 	 cp kbfd-deploy/hosts ~/.ssh/ 
 	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
+	 rm *.log
 	 git pull
 	 cp worker.sh /home/ubuntu/run/worker.sh
 	 chmod +x /home/ubuntu/run/worker.sh
@@ -35,6 +37,7 @@ for ((i=10;i<20;i++)); do
 	 cp kbfd-deploy/hosts ~/.ssh/ 
 	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
+	 rm *.log
 	 git pull
 	 cp worker.sh /home/ubuntu/run/worker.sh
 	 chmod +x /home/ubuntu/run/worker.sh
