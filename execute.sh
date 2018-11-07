@@ -11,6 +11,7 @@ ssh aws21 <<EOF
 	rm -rf ~/data/dbpedia12
 	rm -rf ~/data/yago12
 	rm -rf ~/data/imdb12
+	rm -rf ~/data/synth*
 	cd kbfd-deploy
 	rm *.log
 	git pull
@@ -27,6 +28,7 @@ for ((i=1;i<=9;i++)); do
 	 rm -rf ~/data/dbpedia12
 	 rm -rf ~/data/yago12
 	 rm -rf ~/data/imdb12
+	 rm -rf ~/data/synth*
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
@@ -44,6 +46,7 @@ for ((i=10;i<=20;i++)); do
 	 rm -rf ~/data/dbpedia12
 	 rm -rf ~/data/yago12
 	 rm -rf ~/data/imdb12
+	 rm -rf ~/data/synth*
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
