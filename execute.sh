@@ -18,9 +18,6 @@ EOF
 for ((i=1;i<=9;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
-	 sudo cp kbfd-deploy/hosts /etc/hosts 
-	 cp kbfd-deploy/hosts ~/.ssh/ 
-	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
@@ -33,9 +30,6 @@ done
 for ((i=10;i<=20;i++)); do
 	 ssh aws$i <<EOF
 	 pkill -9 java
-	 sudo cp kbfd-deploy/hosts /etc/hosts 
-	 cp kbfd-deploy/hosts ~/.ssh/ 
-	 cp kbfd-deploy/config ~/.ssh/
 	 cd kbfd-deploy
 	 rm *.log
 	 git pull
