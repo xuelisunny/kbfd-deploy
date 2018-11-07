@@ -24,6 +24,7 @@ for ((i=1;i<9;i++)); do
 	 nohup /home/ubuntu/run/worker.sh > /home/ubuntu/worker.txt 2>&1 & 
 	 exit
 EOF
+done
 for ((i=10;i<20;i++)); do
 	 ssh aws$i <<EOF
 	 pkill -9 java
