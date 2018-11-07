@@ -30,7 +30,7 @@ for ((i=1;i<=9;i++)); do
 	 exit
 EOF
 done
-for ((i=10;i<20;i++)); do
+for ((i=10;i<=20;i++)); do
 	 ssh aws$i <<EOF
 	 pkill -9 java
 	 sudo cp kbfd-deploy/hosts /etc/hosts 
