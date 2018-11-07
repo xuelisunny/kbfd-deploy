@@ -65,7 +65,7 @@ cd kbfd-deploy && cp hosts /etc/hosts && cp config ~/.ssh/ && cp aws_bj.pem ~/.s
 scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4 ~/data/ 
 
 
-yli34@staff.ssh.inf.ed.ac.uk
+ssh yli34@staff.ssh.inf.ed.ac.uk
 Lee692817  
 
 Sequential： 
