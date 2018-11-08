@@ -15,6 +15,7 @@ EOF
 for ((i=2;i<=5;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
+	 mkdir run
 	 cp kbfd-deploy/worker.sh run/
 	 cp kbfd-deploy/Mworker.jar run/
 	 cd run
