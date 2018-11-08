@@ -6,13 +6,12 @@ echo $path
 git add --all
 git commit -m "a"
 git push
-for ((i=1;i<=5;i++)); do
+for ((i=1;i<=9;i++)); do
 	ssh aws0$i <<EOF
-	    cd ./data
-	    rm -rf `ls  |egrep -v 'dbpedia4|yago4'`
-	    cd /home/ubuntu/
-	    chmod +x /home/ubuntu/kbfd-deploy/jar/data-expt.sh 
-		nohup /home/ubuntu/kbfd-deploy/jar/data-expt.sh $path > ~/load-data.txt 2>&1 &
+	    cp ./kbfd-deploy/data-expt.sh ./run/
+	    cd run
+	    chmod +x ./data-expt.sh 
+		nohup ./data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
 EOF
 done
