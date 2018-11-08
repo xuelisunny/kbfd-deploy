@@ -8,7 +8,7 @@ ssh aws01 <<EOF
 	sh ./coordinator.sh ${1}.properties $2 $3
 	exit
 EOF
-for ((i=2;i<=5;i++)); do
+for i in {1,2,3,5}; do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
 	 cd run
