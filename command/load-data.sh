@@ -8,9 +8,10 @@ git commit -m "a"
 git push
 for ((i=1;i<=5;i++)); do
 	ssh aws0$i <<EOF
-	    ps -ef |grep ubuntu | grep -v grep | awk  '{print $2}'|xargs kill -9 
+	    cd ./data
 	    rm -rf `ls  |egrep -v 'dbpedia4|yago4'`
-	    chmod +x /home/ubuntu/kbfd-deploy/jar/data-expt.sh $path
+	    cd /home/ubuntu/
+	    chmod +x /home/ubuntu/kbfd-deploy/jar/data-expt.sh 
 		nohup /home/ubuntu/kbfd-deploy/jar/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
 EOF
