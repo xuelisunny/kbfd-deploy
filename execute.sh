@@ -4,7 +4,6 @@ git commit -m "a"
 git push
 ssh aws01 <<EOF
 	pkill -9 java
-	mkdir run
 	cd kbfd-deploy
 	git pull
 	cd /home/ubuntu/
@@ -19,9 +18,9 @@ EOF
 for ((i=2;i<=5;i++)); do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
-	 cp kbfd-deploy/config /home/ubuntu/.ssh/
-	 mkdir run
+	 cd kbfd-deploy
 	 git pull
+	 cp kbfd-deploy/config /home/ubuntu/.ssh/ 
 	 cd /home/ubuntu/
 	 cp kbfd-deploy/worker.sh run/
 	 cp kbfd-deploy/Mworker.jar run/
