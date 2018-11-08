@@ -8,8 +8,8 @@ git commit -m "a"
 git push
 for ((i=1;i<=5;i++)); do
 	ssh aws0$i <<EOF
-	    chmod +x /home/ubuntu/kbfd-deploy/data-expt.sh
-		nohup /home/ubuntu/kbfd-deploy/data-expt.sh $path > ~/load-data.txt 2>&1 &
+	    chmod +x /home/ubuntu/kbfd-deploy/jar/data-expt.sh
+		nohup /home/ubuntu/kbfd-deploy/jar/data-expt.sh $path > ~/load-data.txt 2>&1 &
 		exit
 EOF
 done
