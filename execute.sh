@@ -11,7 +11,7 @@ ssh aws01 <<EOF
 	cp kbfd-deploy/coordinator.sh run/
 	cp kbfd-deploy/Mcoordinator.jar run/
 	cd run
-	chmod +x coordinator.sh
+	chmod +x ./coordinator.sh
 	sh ./coordinator.sh ${1}.properties $2 $3
 	exit
 EOF
@@ -25,7 +25,7 @@ for ((i=2;i<=5;i++)); do
 	 cp kbfd-deploy/worker.sh run/
 	 cp kbfd-deploy/Mworker.jar run/
 	 cd run
-	 chmod +x worker.sh
+	 chmod +x ./worker.sh
 	 sh ./worker.sh ${1}.properties $2 $3
 	 exit
 EOF
