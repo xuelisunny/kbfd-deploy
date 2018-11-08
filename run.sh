@@ -18,7 +18,7 @@ transfer data
 
 
 
-
+cp *.jar ~/run/ && cp 
 
 
 
