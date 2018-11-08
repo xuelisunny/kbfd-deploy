@@ -142,15 +142,6 @@ do
 done
 
 
-#!/bin/bash
-pid=$(ssh root@$remote_host "ps -ef | grep data-expt | grep -v grep | awk  '{print $2}'"| awk '{print $2}')
-for ((i=1;i<6;i++)); do
-	 ssh aws0$i <<EOF
-	 kill -9 ${pid}
-	 exit
-EOF
-done
-
 parallel
 java -Djava.security.policy=security.policy -Xmx20G -jar ./Mcoordinator.jar config-sample.properties 4 1 1
 java -Djava.security.policy=security.policy -Xmx20G -jar ./Mworker.jar localhost config-sample.properties 4 1 1
