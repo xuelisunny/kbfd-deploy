@@ -6,9 +6,9 @@ ssh aws01 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
-	cp *.sh *.properties ~/run/
+	sudo cp *.sh *.properties ~/run/
 	cd ~/run/
-	chmod +x *.sh
+	sudo chmod +x *.sh
 	sh ./coordinator.sh ${1}.properties $2 $3
 	exit
 EOF
@@ -17,7 +17,8 @@ for i in {2,3,4,5}; do
 	 pkill -9 java
 	 cd kbfd-deploy
 	 git pull
-	 cp *.sh *.properties ~/run/
+	 sudo cp *.sh *.properties ~/run/
+	 sudo chmod +x *.sh
 	 cd ~/run/
 	 sh ./worker.sh ${1}.properties $2 $3
 	 exit
