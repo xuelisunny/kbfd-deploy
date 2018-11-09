@@ -9,14 +9,33 @@ open instance:
 
 3. mkdir run && mkdir data && cd kbfd-deploy && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh && chmod 400 ~/.ssh/aws_bj.pem && sudo cp hosts /etc/hosts 
 
-4. cd .. && mkdir run && mkdir data 
 
+5. cd kbfd-deploy && cp *.jar *.sh security.policy *.properties ~/run/  && chmod 400 ~/run/*.sh
+
+
+cd kbfd-deploy && git pull && cp *.jar *.properties ~/run/
+
+mvn package && cp target/*.jar kbfd-deploy/ && cd kbfd-deploy && git add --all && git commit -m "a" && git push
+
+
+sudo rm /var/lib/dpkg/info/oracle-java8-installer*  && sudo apt-get purge oracle-java8-installer* && sudo rm /etc/apt/sources.list.d/*java*
+
+
+sudo rm /var/lib/dpkg/info/oracle-java8-installer*
+sudo apt-get purge oracle-java8-installer*
+sudo rm /etc/apt/sources.list.d/*java*
+sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+
+/var/cache/apt/archives$
 
 transfer data 
 
 ./load-data.sh dbpedia4
 
-
+sudo rm /var/cache/debconf/*.dat 
 
 cp *.jar ~/run/ && cp 
 
@@ -29,6 +48,8 @@ sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock
 chmod 400 aws_bj.pem aws_nx.pem
 
  ps -ef |grep yago4 | grep -v grep | awk  '{print $2}'|xargs kill -9 
+
+  ps -ef |grep git | grep -v grep | awk  '{print $2}'|xargs kill -9 
 
 find . -name ".DS_Store" -type f -print -exec rm -rf {} \;
 
