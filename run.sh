@@ -80,7 +80,14 @@ chmod 400 ~/.ssh/aws.pem
 cd kbfd-deploy && cp hosts /etc/hosts && cp config ~/.ssh/ && cp aws_bj.pem ~/.ssh/ && chmod 400 ~/.ssh/aws_bj.pem  
 
 
+sudo vim /etc/ssh/ssh_config
 
+添加两行配置
+
+ServerAliveInterval 30
+ServerAliveCountMax 10
+
+yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/user/y/yli34/exp-nfd/target/
 
 
 scp -r yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/dbpedia4 ~/data/ 
@@ -93,7 +100,7 @@ Sequential：
 
 java -Djava.security.policy=security.policy -Xmx120G -jar ./sequential.jar config-sample.properties
 
-
+java -Djava.security.policy=security.policy -Xmx120G -jar ./data-gfdTree.jar dbpedia1200-2000
 
 parallel
 java -Djava.security.policy=security.policy -Xmx20G -jar ./Mcoordinator.jar config-sample.properties 4 1 1
