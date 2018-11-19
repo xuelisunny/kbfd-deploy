@@ -1,1 +1,1 @@
-nohup java -Djava.security.policy=security.policy -jar /home/liuxueli/exp-nfd/target/client.jar master >> client.txt &
+nohup java -Djava.security.policy=security.policy -jar /home/ubuntu/kbfd-deploy/nfd/client.jar localhost >> /home/ubuntu/client.txt &

@@ -6,10 +6,10 @@ ssh aws01 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
-	sudo cp *.sh *.properties *.jar ~/run/
+	sudo cp *.sh *.properties ~/run/
 	cd ~/run/
 	sudo chmod +x *.sh
-	sh ./coordinator.sh ${1}.properties $2 $3
+	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5
 	exit
 EOF
 for i in {2,3,4,5}; do
@@ -17,10 +17,10 @@ for i in {2,3,4,5}; do
 	 pkill -9 java
 	 cd kbfd-deploy
 	 git pull
-	 sudo cp *.sh *.properties *.jar ~/run/
+	 sudo cp *.sh *.properties ~/run/
 	 sudo chmod +x *.sh
 	 cd ~/run/
-	 sh ./worker.sh ${1}.properties $2 $3
+	 sh ./worker.sh ${1}.properties $2 $3 $4 $5
 	 exit
 EOF
 done
