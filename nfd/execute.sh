@@ -9,7 +9,7 @@ ssh aws01 <<EOF
 	sudo cp *.sh *.properties ~/run/
 	cd ~/run/
 	sudo chmod +x *.sh
-	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5
+	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5 $6
 	exit
 EOF
 for i in {2,3,4,5}; do
@@ -20,7 +20,7 @@ for i in {2,3,4,5}; do
 	 sudo cp *.sh *.properties ~/run/
 	 sudo chmod +x *.sh
 	 cd ~/run/
-	 sh ./worker.sh ${1}.properties $2 $3 $4 $5
+	 sh ./worker.sh ${1}.properties $2 $3 $4 $5 $6
 	 exit
 EOF
 done
