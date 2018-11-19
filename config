@@ -1,19 +1,28 @@
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 Host *
-    ServerAliveInterval 300s
+    ServerAliveInterval 30
+    ServerAliveCountMax 10
 Host aws*
     User ubuntu
     IdentityFile ~/.ssh/aws_bj.pem
 Host aws01
-    Hostname 52.81.103.72
+    Hostname 52.80.134.86
 Host aws02
-    Hostname 52.81.71.83
+    Hostname 52.81.86.132
 Host aws03
-    Hostname 52.81.24.110
+    Hostname 52.81.86.91
 Host aws04
-    Hostname 52.80.72.26
+    Hostname 52.81.74.187
 Host aws05
-    Hostname 52.81.98.204
+    Hostname 52.81.28.154
+Host aws06
+    Hostname 52.81.19.29
+Host aws07
+    Hostname 52.81.26.174
+Host aws08
+    Hostname 52.80.122.64
+Host aws09
+    Hostname 52.80.121.40
 
 
