@@ -1,7 +1,7 @@
 #!/bin/bash
 value2=$1
 #value1=yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/group/project/dgrape/KBsFD/
-value1=yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/user/y/yli34/exp-nfd/target/dbpedia
+value1=yli34@staff.ssh.inf.ed.ac.uk:/afs/inf.ed.ac.uk/user/y/yli34/exp-nfd/target/
 path=${value1}${value2}
 echo $path
 git add --all
