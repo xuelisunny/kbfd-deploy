@@ -12,7 +12,7 @@ ssh aws01 <<EOF
 	cp *.jar *.sh *.properties ~/run/
 	cd ~/run/
 	sudo chmod +x *.sh
-	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5 $6
+	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5 $6 $7
 	exit
 EOF
 for i in {2,3,4,5,6,7,8,9}; do
