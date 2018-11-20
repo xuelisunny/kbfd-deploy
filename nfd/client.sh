@@ -1,1 +1,1 @@
-nohup java -Djava.security.policy=security.policy -jar /home/ubuntu/kbfd-deploy/nfd/client.jar localhost >> /home/ubuntu/client.txt &
+nohup java -Djava.security.policy=security.policy -jar client.jar localhost >> /home/ubuntu/client.txt 2>&1 &
