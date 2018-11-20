@@ -4,7 +4,7 @@ ssh aws01 <<EOF
 	do 
 		process=`ps aux | grep Djava | grep -v grep`; 
 		if [ "$process" == "" ]; then 
-			sleep 1; 
+			sleep 50s; 
 			echo "process 不存在,开始执行next"; 
 			break;
 		else 
