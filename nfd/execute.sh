@@ -26,7 +26,7 @@ for i in {2,3,4,5,6,7,8,9}; do
 	 sudo cp *.sh *.properties *.jar ~/run/
 	 sudo chmod +x *.sh
 	 cd ~/run/
-	 sh ./worker.sh ${1}.properties $2 $3 $4 $5 $6
+	 sh ./worker.sh ${1}.properties $2 $3 $4 $5 $6 $7
 	 exit
 EOF
 done
