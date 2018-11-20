@@ -42,6 +42,37 @@ cp *.jar ~/run/ && cp
 
 
 
+url_test(){
+	URL=$1
+	curl -s --head $URL|grep "200 OK"
+	if [ $? -ne 0 ];then
+		shell_unlock;
+		writelog "test error" && exit;
+	fi
+}shell脚本while true
+pre_test(){循环测试
+	url_test "http://${PRE_LIST}/index.html"
+	echo "add to cluster"
+}
+
+
+pre_test(){
+	ssh aws01 <<EOF
+	val=0
+	while(( $val=0 ))  
+    do  
+     	ps -aux |awk '{print $11}' | grep "Djava" >/dev/null
+		if [ $? -ne 0 ];then
+			val=1;
+		fi
+		sleep 100s  
+    done 
+    exit
+ EOF 
+}
+	
+
+
 sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock
 
 
