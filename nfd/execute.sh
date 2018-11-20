@@ -7,9 +7,6 @@ ssh aws01 <<EOF
 	cd kbfd-deploy
 	cp security.policy ~/run/
 	git pull
-	cd nfd
-	rm ~/run/*
-	sudo cp *.sh *.properties *.jar  ~/run/
 	cd ~/run/
 	sudo chmod +x *.sh
 	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5 $6
@@ -21,10 +18,6 @@ for i in {2,3,4,5,6,7,8,9}; do
 		 cd kbfd-deploy
 		 git pull
 		 cp security.policy ~/run/
-		 cd nfd
-		 rm ~/run/*
-		 sudo cp *.sh *.properties *.jar ~/run/
-		 sudo chmod +x *.sh
 		 cd ~/run/
 		 sh ./worker.sh ${1}.properties $2 $3 $4 $5 $6 $7
 		 exit
