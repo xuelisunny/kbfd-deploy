@@ -1,1 +1,1 @@
-nohup java -Djava.security.policy=security.policy -jar client.jar localhost >> /home/ubuntu/client.txt 2>&1 &
+nohup java -Djava.security.policy=security.policy -jar ./client.jar localhost >> /home/ubuntu/client.txt 2>&1 &
