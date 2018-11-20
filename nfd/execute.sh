@@ -6,6 +6,8 @@ ssh aws01 <<EOF
 	pkill -9 java
 	cd kbfd-deploy
 	git pull
+	cd nfd
+	rm ~/run/*
 	sudo cp *.sh *.properties ~/run/
 	cd ~/run/
 	sudo chmod +x *.sh
@@ -17,6 +19,8 @@ for i in {2,3,4,5,6,7,8,9}; do
 	 pkill -9 java
 	 cd kbfd-deploy
 	 git pull
+	 cd nfd
+	 rm ~/run/*
 	 sudo cp *.sh *.properties ~/run/
 	 sudo chmod +x *.sh
 	 cd ~/run/
