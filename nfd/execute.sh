@@ -19,8 +19,8 @@ for i in {2,3,4,5,6,7,8,9}; do
 	 ssh aws0$i <<EOF
 		 pkill -9 java
 		 rm ~/run/*
-		 cp security.policy ~/run/
 		 cd kbfd-deploy
+		 cp security.policy ~/run/
 		 git pull
 		 cd nfd
 	     cp *.jar *.sh *.properties ~/run/
