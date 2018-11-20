@@ -1,5 +1,6 @@
 #!/bin/bash
 sh ./execute.sh dbpedia 8 2 15 1 400 4 
+echo "begin to sleep to wait!"
 sleep 500s
 sh ./test.sh
 sleep 2s
