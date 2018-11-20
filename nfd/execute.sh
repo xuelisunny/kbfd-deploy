@@ -12,7 +12,7 @@ ssh aws01 <<EOF
 	sh ./coordinator.sh ${1}.properties $2 $3 $4 $5 $6
 	exit
 EOF
-for i in {2,3,4,5}; do
+for i in {2,3,4,5,6,7,8,9}; do
 	 ssh aws0$i <<EOF
 	 pkill -9 java
 	 cd kbfd-deploy
